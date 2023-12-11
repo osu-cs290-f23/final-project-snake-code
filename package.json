@@ -5,7 +5,8 @@
     "main": "snakeServer.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node snakeServer.js"
+        "start": "node snakeServer.js",
+        "dev": "nodemon snakeServer.js"
     },
     "dependencies": {
         "express": "^4.18.2",
