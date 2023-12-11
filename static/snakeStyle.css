@@ -1,3 +1,6 @@
+
+/* header  */
+
 body {
     font-family: 'Georgia', sans-serif;
     margin: 0;
@@ -5,7 +8,6 @@ body {
 
 a {
     text-decoration: none;
-    color: #f67811;
 }
 
 a:hover {
@@ -17,39 +19,47 @@ header {
     display: flex;
     align-items: center;
     position: relative;
+    /* justify-content: center; */
     /* max-height: 200px; */
 }
 
 header a {
     color: #fff;
+
 }
 
 .header-image-container {
-    max-height: 200px;
+    /* max-height: 100px; */
+    margin: 5px;
+    border: 2px solid greenyellow;
 }
 
 .header-image-container img{
    width: 100%;
    height: 100%;
-   max-height: 200px;
+   max-height: 100px;
 }
 
 .site-title {
     font-family: "Georgia", serif;
     font-size: 80px;
     font-weight: 90;
-    margin: 0 0 0 20px;
-    padding-top: 30px;
+    margin: 0 0 0 0px;
 }
 
 .site-title a:hover {
     text-decoration: none;
 }
 
+/* navbar  */
+
 .navbar {
     font-size: 22px;
     background-color: green;
-    }
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 
 .navlist {
     margin: 0;
@@ -57,6 +67,7 @@ header a {
 
 .navitem {
     display: inline-block;
+    /* width: 100%; */
 }
 
 .navitem:hover {
@@ -71,9 +82,67 @@ header a {
 .navitem a {
     display: inline-block;
     color: white;
-    padding: 10px 20px;
+    padding: 5px 5px;
 }
 
 .content {
     display: flex;
+}
+
+/* game page  */
+
+.game-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.game-content-container {
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.game-canvas {
+    border: 2px solid red;
+    width: 600px;
+    height: 600px;
+    margin: 10px;
+}
+
+/* leaderboard page  */
+
+.leaderboard-page{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.leaderboard-container {
+    display: flex;
+    justify-content: center; 
+    
+}
+
+.leaderboard-canvas {
+    border: 2px solid red;
+    width: 400px;
+    height: 600px;
+    margin: 10px;
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* player data */
+
+.player-data-container {
+    /* border: 2px solid green; */
+    padding: 0 0 0 0;
+
+}
+
+.player-data-container a{
+    color:
 }
