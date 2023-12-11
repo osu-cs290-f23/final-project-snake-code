@@ -1,13 +1,13 @@
 <main class="leaderboard-page">
 
     <div class="leaderboard-container">
-    <h2>Leaderboard:</h2>
+        <div class="leaderboard-canvas">
+            <h2>Leaderboard:</h2>
+            {{!-- partials --}}
+            {{#each leaderboardData}}
+                {{> playerData}}
+            {{/each}}
+        </div>
     </div>
-
-    {{!-- partials --}}
-    {{#each leaderboardData}}
-        {{> playerData}}
-    {{/each}}
-    
 
 </main>
