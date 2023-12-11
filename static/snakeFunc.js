@@ -1,5 +1,6 @@
 var canvas = document.getElementById("gameCanvas")
 var snake = canvas.getContext("2d")
+var fs = require('fs')
 
 var delay = 100
 let score = 0
@@ -90,6 +91,23 @@ function resetGame() {
 
     score = 0
 
+    updateLeaderboard()
+
+}
+
+function updateLeaderboard() {
+    
+    var leaderboardData = JSON.parse(fs.readFileSync('leaderboardData.json, utf8'))
+
+    var playerName = "Player"
+    const playerData = {
+        name: playerName,
+        score: score
+    }
+
+    leaderboardData.push(playerData)
+
+    fs.writeFileSync('leaderboardData.json', JSON,stringify(leaderboardData), 'utf8')
 }
 
 document.addEventListener("keydown", (e) => {
