@@ -2,6 +2,7 @@
 var path = require('path')
 var express = require('express')
 var exphbs = require("express-handlebars")
+const fs = require('fs');
 
 var app = express()
 var port = process.env.PORT || 3000
@@ -10,11 +11,41 @@ app.engine("handlebars", exphbs.engine({ defaultLayout : 'main' }))
 app.set("view engine","handlebars")
 
 var leaderboardData = require("./leaderboardData.json")
+
+var dataArray = [];
+for(let i in leaderboardData){
+    dataArray.push(leaderboardData[i])
+}
+
+function dataSort(arr, n){
+    
+    let i, key, j;
+    for (i = 1; i < n; i++){
+        key = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j].score < key.score) 
+        {  
+            arr[j + 1] = arr[j];  
+            j = j - 1;  
+        }  
+        arr[j + 1] = key;
+    }
+}
+
+var outfile = "leaderboardData.json"
+
+function writeData(file, data){
+    dataSort(data, data.length);
+    fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
+}
  
 app.use(express.static('static'))
 
 app.get('/leaderboard', function (req, res){
     console.log("leaderboard")
+    writeData(outfile, dataArray)
+    console.log(leaderboardData[0])
     res.status(200).render("leaderboard",{
         leaderboardData: leaderboardData
     })
