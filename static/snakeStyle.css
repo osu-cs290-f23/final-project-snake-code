@@ -125,7 +125,7 @@ header a {
 }
 
 .leaderboard-canvas {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     width: 400px;
     height: 600px;
     margin: 10px;
@@ -133,6 +133,7 @@ header a {
     justify-content: top;
     align-items: center;
     flex-direction: column;
+    background-color: yellow;
 }
 
 /* player data */
