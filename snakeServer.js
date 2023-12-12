@@ -52,8 +52,10 @@ app.get('/leaderboard', function (req, res){
 })
 
 app.get('/', function (req, res){
+    writeData(outfile, dataArray)
+    console.log(leaderboardData[0].score)
     res.status(200).render("gameView",{
-        
+        highscore: leaderboardData[0].score
     })
     console.log("game page")
 })

@@ -100,7 +100,6 @@ header a {
 .game-content-container {
     display: flex;
     justify-content: center; 
-    
 }
 
 .game-canvas {
@@ -108,6 +107,20 @@ header a {
     width: 600px;
     height: 600px;
     margin: 10px;
+}
+
+.high-score-container {
+    /* border: 2px solid green; */
+    background-color: green;
+    width: 200px;
+    height: 50px;
+    margin: 10px;
+    font-family: "Georgia", serif;
+}
+
+.high-score-container a{
+    color: white;
+    text-decoration: none;
 }
 
 /* leaderboard page  */
