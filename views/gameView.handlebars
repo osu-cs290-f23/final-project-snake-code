@@ -4,14 +4,16 @@
             <h2> High Score: {{highscore}} </h2>
         </div>
         <div class="game-canvas-container">
-            <canvas id="game-canvas" width="600" height="600"></canvas>
+            <div id="game-canvas-container">
+                <canvas id="game-canvas" width="600" height="600"></canvas>
+            </div>
         </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
                 <span class="close" onclick="closeModal()">&times;</span>
                 <p>Enter your name:</p>
                 <input type="text" id="playerNameInput">
-                <button onclick="savePlayerName()">Submit</button>
+                <button onclick="savePlayerData()">Submit</button>
             </div>
         </div>
     </div>
