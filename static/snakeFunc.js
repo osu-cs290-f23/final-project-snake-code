@@ -1,8 +1,8 @@
-var canvas = document.getElementById("gameCanvas")
+var canvas = document.getElementById("game-canvas")
 var snake = canvas.getContext("2d")
-var fs = require('fs')
+//var fs = require('fs')
 
-var delay = 100
+var delay = 50
 let score = 0
 let highScore = 0
 
@@ -31,16 +31,17 @@ function update() {
             head.x += 10
             break
         case "down":
-            head.y += -10
+            head.y -= 10
             break
         case "left":
-            head.x += -10
+            head.x -= 10
             break
     }
 
     if (head.x > canvas.width - head.size || head.x < 0 || head.y > canvas.height - head.size || head.y < 0) {
         resetGame()
     }
+
 
     if (head.x < food.x + food.size && head.x + head.size > food.x &&
         head.y < food.y + food.size && head.y + head.size > food.y) {
@@ -49,12 +50,18 @@ function update() {
 
     for (let i = segments.length - 1; i > 0; i--) {
         segments[i].x = segments[i - 1].x
-        segments[i].x = segments[i - 1].y
+        segments[i].y = segments[i - 1].y
+    }
+
+    for (let i = 0; i < segments.length; i++) {
+        if (head.x === segments[i].x && head.y === segments[i].y) {
+            resetGame();
+        }
     }
 
     if (segments.length > 0) {
-        segments[0].x = head.x
-        segments[0].y = head.y
+        segments[0].x = head.x;
+        segments[0].y = head.y;
     }
     
     
@@ -67,9 +74,11 @@ function eatFood() {
         highScore = score
     }
 
+    //let lastSegment = segments[segments.length - 1]
+
     var newSegment = { 
         x: head.x, 
-        y: head.y
+        y: head.y + head.size
     }
 
     segments.push(newSegment)
@@ -95,31 +104,31 @@ function resetGame() {
 
 }
 
-function updateLeaderboard() {
+// function updateLeaderboard() {
     
-    var leaderboardData = JSON.parse(fs.readFileSync('leaderboardData.json, utf8'))
+//     var leaderboardData = JSON.parse(fs.readFileSync('leaderboardData.json', 'utf8'))
 
-    var playerName = "Player"
-    const playerData = {
-        name: playerName,
-        score: score
-    }
+//     var playerName = "Player"
+//     const playerData = {
+//         name: playerName,
+//         score: score
+//     }
 
-    leaderboardData.push(playerData)
+//     leaderboardData.push(playerData)
 
-    fs.writeFileSync('leaderboardData.json', JSON,stringify(leaderboardData), 'utf8')
-}
+//     fs.writeFileSync('leaderboardData.json', JSON.stringify(leaderboardData), 'utf8')
+// }
 
 document.addEventListener("keydown", (e) => {
     switch (e.key) {
         case "w":
-            head.direction = "up"
+            head.direction = "down"
             break
         case "d":
             head.direction = "right"
             break
         case "s":
-            head.direction = "down"
+            head.direction = "up"
             break
         case "a":
             head.direction = "left"
@@ -145,9 +154,9 @@ function draw() {
         snake.fillRect(segment.x, segment.y, head.size, head.size)
     }
 
-    snake.fillStyle = "white"
+    snake.fillStyle = "black"
     snake.font = "24px candara"
-    snake.fillText('Score: ${score} High Score: ${highScore]', canvas.width / 2, 30)
+    snake.fillText(`Score: ${score} High Score: ${highScore}`, canvas.width / 2, 30);
 }
 
 function clearCanvas() {

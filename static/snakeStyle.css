@@ -160,3 +160,29 @@ header a {
 .player-data-container a{
     color:
 }
+
+.modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: yellowgreen;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    width: 50%;
+}
+
+.close {
+    color: darkgreen;
+    float: right;
+    font-size: 28px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
