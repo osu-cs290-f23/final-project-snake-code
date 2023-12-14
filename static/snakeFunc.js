@@ -103,10 +103,15 @@ function resetGame() {
     
     savePlayerData(() => {
         score = 0
+
+
+        //updateHighScoreInView()
     })
 
-
-    //updateLeaderboard()
+// function updateHighScoreInView() {
+//     var highScoreElement = document.getElementById('highScoreElementId')
+//     highScoreElement.textContent = `High Score: ${highScore}`
+// }
 
 
 
@@ -195,8 +200,8 @@ function draw() {
     }
 
     snake.fillStyle = "black"
-    snake.font = "24px candara"
-    snake.fillText(`Score: ${score} High Score: ${highScore}`, canvas.width / 2, 30);
+    snake.font = "36px Georgia"
+    snake.fillText(`Score: ${score}`, canvas.width - 150, 35);
 }
 
 function clearCanvas() {
