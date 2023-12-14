@@ -131,18 +131,19 @@ function openModal() {
 }
 
 function closeModal() {
-    var modal = document.getElementById("myModal");
-    var playerNameInput = document.getElementById("playerNameInput");
-    var playerName = playerNameInput.value.trim();
+    var modal = document.getElementById("myModal")
+    var playerNameInput = document.getElementById("playerNameInput")
+    var playerName = playerNameInput.value.trim()
 
     if (playerName !== '') {
-        modal.style.display = "none";
-        isModalOpen = false;
-
-        playerNameInput.value = '';
+        modal.style.display = "none"
+        isModalOpen = false
+        score = 0
+        playerNameInput.value = ''
     } else {
-        modal.style.display = "none";
-        isModalOpen = false;
+        modal.style.display = "none"
+        isModalOpen = false
+        score = 0
     }
 
 
