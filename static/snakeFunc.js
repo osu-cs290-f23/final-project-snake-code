@@ -2,9 +2,10 @@ var canvas = document.getElementById("game-canvas")
 var snake = canvas.getContext("2d")
 //var fs = require('fs')
 
-var delay = 50
+var delay = 100
 let score = 0
 let highScore = 0
+var isModalOpen = false
 
 var head = {
     x: 300,
@@ -23,18 +24,21 @@ var food = {
 var segments = []
 
 function update() {
+    if (isModalOpen) {
+        return;
+    }
     switch (head.direction) {
         case "up":
-            head.y += 10
+            head.y += head.size
             break
         case "right":
-            head.x += 10
+            head.x += head.size
             break
         case "down":
-            head.y -= 10
+            head.y -= head.size
             break
         case "left":
-            head.x -= 10
+            head.x -= head.size
             break
     }
 
@@ -83,8 +87,8 @@ function eatFood() {
 
     segments.push(newSegment)
 
-    food.x = Math.floor(Math.random() * (canvas.width / 10) * 10)
-    food.y = Math.floor(Math.random() * (canvas.height / 10) * 10)
+    food.x = Math.floor(Math.random() * (canvas.width / 20 - 1) * 20)
+    food.y = Math.floor(Math.random() * (canvas.height / 20 - 1) * 20)
 
 }
 
@@ -93,8 +97,8 @@ function resetGame() {
     head.y = 300
     head.direction = "stop"
 
-    food.x = Math.floor(Math.random() * (canvas.width / 10))
-    food.y = Math.floor(Math.random() * (canvas.height / 10))
+    food.x = Math.floor(Math.random() * (canvas.width / 20))
+    food.y = Math.floor(Math.random() * (canvas.height / 20))
 
     segments.length = 0
 
@@ -122,6 +126,7 @@ function openModal() {
     var modal = document.getElementById("myModal")
 
     modal.style.display = "block"
+    isModalOpen = true
     
 }
 
@@ -129,6 +134,7 @@ function closeModal() {
     var modal = document.getElementById("myModal")
 
     modal.style.display = "none"
+    isModalOpen = false;
 }
 
 
@@ -201,7 +207,7 @@ function draw() {
 
     snake.fillStyle = "black"
     snake.font = "36px Georgia"
-    snake.fillText(`Score: ${score}`, canvas.width - 150, 35);
+    snake.fillText(`Score: ${score}`, canvas.width - 185, 35);
 }
 
 function clearCanvas() {
