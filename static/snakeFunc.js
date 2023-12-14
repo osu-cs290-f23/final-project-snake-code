@@ -7,15 +7,15 @@ let score = 0
 let highScore = 0
 
 var head = {
-    x: 0,
-    y: 0,
+    x: 300,
+    y: 300,
     size: 20,
     direction: "stop"
 }
 
 var food = {
-    x: 0,
-    y: 0,
+    x: 250,
+    y: 250,
     size: 20,
     color: "red"
 }
@@ -89,8 +89,8 @@ function eatFood() {
 }
 
 function resetGame() {
-    head.x = 0
-    head.y = 0
+    head.x = 300
+    head.y = 300
     head.direction = "stop"
 
     food.x = Math.floor(Math.random() * (canvas.width / 10))

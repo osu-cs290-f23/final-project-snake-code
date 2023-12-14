@@ -4,6 +4,8 @@
 body {
     font-family: 'Georgia', sans-serif;
     margin: 0;
+    background-color: lightgreen;
+
 }
 
 a {
@@ -71,7 +73,7 @@ header a {
 }
 
 .navitem:hover {
-    background-color: white;
+    background-color: lightgreen;
 }
 
 .navitem:hover a{
@@ -102,28 +104,15 @@ header a {
     justify-content: center; 
 }
 
-#game-canvas-container {
-    border: 2px solid red;
+#game-canvas {
+    border: 2px solid black;
+    background-color: white;
     width: 600px;
     height: 600px;
     margin: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-
-#game-canvas {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-#game-canvas div:nth-child(even) {
-    background-color: lightgrey;
-}
-
-#game-canvas div:nth-child(odd) {
-    background-color: darkgrey;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .high-score-container {
@@ -175,24 +164,18 @@ header a {
 }
 
 .player-data-container a{
-    color:
+    /*color:*/
 }
 
 .modal {
     display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    background-color: black;
-    align-items: center;
-    margin: 0;
-    padding: 0;
+    background-color: yellowgreen;
 }
 
 .modal-content {
-    background-color: yellowgreen;
+    background-color: white;
     padding: 20px;
     border: 1px solid black;
     width: 50%;
@@ -200,15 +183,12 @@ header a {
 
 .close {
     color: darkgreen;
-    cursor: pointer;
+    float: right;
     font-size: 28px;
 }
 
 .close:hover,
 .close:focus {
     color: black;
-}
-
-.modal-content {
-    margin: auto;
+    cursor: pointer;
 }
