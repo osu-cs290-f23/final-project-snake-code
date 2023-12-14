@@ -159,6 +159,7 @@ document.addEventListener("keydown", (e) => {
 function gameLoop() {
     clearCanvas();
     update();
+    drawGrid()
     draw();
 }
 
@@ -214,5 +215,22 @@ function clearCanvas() {
     snake.clearRect(0, 0, canvas.width, canvas.height)
 }
 
+//https://stackoverflow.com/questions/11735856/draw-a-grid-on-an-html-5-canvas-element
+function drawGrid() {
+
+    snake.fillStyle = "lightgrey"
+    
+    for(var i = 0; i < 600; i+=40) {
+        for(var j = 20; j < 600; j+=40){
+            snake.fillRect(i, j, 20, 20);
+        }
+    }
+    for(var i = 20; i < 600; i+=40) {
+        for(var j = 0; j < 600; j+=40){
+            snake.fillRect(i, j, 20, 20);
+        }
+    }
+
+}
 
 setInterval(gameLoop, delay)
