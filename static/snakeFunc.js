@@ -98,11 +98,17 @@ function resetGame() {
 
     segments.length = 0
 
-    score = 0
+    openModal()
+
+    
+    savePlayerData(() => {
+        score = 0
+    })
+
 
     //updateLeaderboard()
 
-    openModal()
+
 
 }
 
@@ -164,6 +170,8 @@ function savePlayerData() {
         .then(response => {
             if (response.ok) {
                 console.log('Score saved successfully');
+                score = 0
+                closeModal()
             } else {
                 console.error('Failed to save score');
             }

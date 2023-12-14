@@ -58,8 +58,9 @@ app.get('/leaderboard', function (req, res){
     console.log("leaderboard")
     writeData(outfile, dataArray)
     console.log(leaderboardData[0])
+    const slicedleaderboardData = leaderboardData.slice(0,10)
     res.status(200).render("leaderboard",{
-        leaderboardData: leaderboardData
+        leaderboardData: slicedleaderboardData
     })
 })
 
