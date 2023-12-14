@@ -3,6 +3,7 @@ var path = require('path')
 var express = require('express')
 var exphbs = require("express-handlebars")
 const fs = require('fs');
+var Handlebars = require('handlebars');
 
 var app = express()
 var port = process.env.PORT || 3000
@@ -39,6 +40,13 @@ function writeData(file, data){
     dataSort(data, data.length);
     fs.writeFileSync(file, JSON.stringify(data, null, 2), 'utf-8');
 }
+
+//https://stackoverflow.com/questions/22103989/adding-offset-to-index-when-looping-through-items-in-handlebars
+//increses the handlebars index by 1
+Handlebars.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
  
 app.use(express.static('static'))
 

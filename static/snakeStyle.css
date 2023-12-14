@@ -115,20 +115,6 @@ header a {
     transform: translate(-50%, 0);
 }
 
-.high-score-container {
-    /* border: 2px solid green; */
-    background-color: green;
-    width: 200px;
-    height: 50px;
-    margin: 10px;
-    font-family: "Georgia", serif;
-}
-
-.high-score-container a{
-    color: white;
-    text-decoration: none;
-}
-
 /* leaderboard page  */
 
 .leaderboard-page{
@@ -152,19 +138,26 @@ header a {
     justify-content: top;
     align-items: center;
     flex-direction: column;
-    background-color: yellow;
+    background-color: white;
+    border: 2px solid black;
+    /* position: absolute; */
 }
+
 
 /* player data */
 
 .player-data-container {
     /* border: 2px solid green; */
-    padding: 0 0 0 0;
-
+    padding: 10px;
+    margin: 10px;
+    border: solid 2px green;
+    width: 90%;
 }
 
-.player-data-container a{
-    /*color:*/
+span {
+    text-decoration: none;
+    color: green;
+    font-size: 150%;
 }
 
 .modal {
