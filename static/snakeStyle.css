@@ -169,21 +169,31 @@ header a {
 
 .modal {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: yellowgreen;
+    background-color: black;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 .modal-content {
     background-color: white;
+    background-color: yellowgreen;
     padding: 20px;
     border: 1px solid black;
     width: 50%;
+
 }
 
 .close {
     color: darkgreen;
     float: right;
+    cursor: pointer;
     font-size: 28px;
 }
 
@@ -192,3 +202,8 @@ header a {
     color: black;
     cursor: pointer;
 }
+
+.modal-content {
+    margin: auto;
+}
+
