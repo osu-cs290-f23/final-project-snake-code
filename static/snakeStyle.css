@@ -127,7 +127,7 @@ header a {
 
 #game-canvas {
     border: 2px solid black;
-    background-color: white;
+    background-color: darkgray;
     width: 600px;
     height: 600px;
     margin: 10px;

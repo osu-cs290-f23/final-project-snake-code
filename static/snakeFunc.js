@@ -212,7 +212,7 @@ function clearCanvas() {
 //https://stackoverflow.com/questions/11735856/draw-a-grid-on-an-html-5-canvas-element
 function drawGrid() {
 
-    snake.fillStyle = "#fcccef";
+    snake.fillStyle = "lightgrey"
     
     for(var i = 0; i < 600; i+=40) {
         for(var j = 20; j < 600; j+=40){
