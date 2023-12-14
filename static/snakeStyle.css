@@ -71,7 +71,7 @@ header a {
 }
 
 .navitem:hover {
-    background-color: white;
+    background-color: lightgreen;
 }
 
 .navitem:hover a{
@@ -95,6 +95,7 @@ header a {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    background-color: lightgreen;
 }
 
 .game-content-container {
@@ -104,6 +105,7 @@ header a {
 
 #game-canvas {
     border: 2px solid red;
+    background-color: white;
     width: 600px;
     height: 600px;
     margin: 10px;
