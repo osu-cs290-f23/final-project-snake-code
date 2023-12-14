@@ -131,10 +131,21 @@ function openModal() {
 }
 
 function closeModal() {
-    var modal = document.getElementById("myModal")
+    var modal = document.getElementById("myModal");
+    var playerNameInput = document.getElementById("playerNameInput");
+    var playerName = playerNameInput.value.trim();
 
-    modal.style.display = "none"
-    isModalOpen = false;
+    if (playerName !== '') {
+        modal.style.display = "none";
+        isModalOpen = false;
+
+        playerNameInput.value = '';
+    } else {
+        modal.style.display = "none";
+        isModalOpen = false;
+    }
+
+
 }
 
 
