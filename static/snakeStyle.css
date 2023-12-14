@@ -225,3 +225,9 @@ span {
     margin: auto;
 }
 
+/* error page */
+
+.error-container{
+    display: flex;
+    justify-content: center;
+}
