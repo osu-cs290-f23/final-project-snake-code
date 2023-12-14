@@ -100,24 +100,27 @@ function resetGame() {
 
     score = 0
 
-    updateLeaderboard()
+    //updateLeaderboard()
+
+    openModal()
 
 }
 
-// function updateLeaderboard() {
+function openModal() {
+
+    var modal = document.getElementById("myModal")
+
+    modal.style.display = "block"
     
-//     var leaderboardData = JSON.parse(fs.readFileSync('leaderboardData.json', 'utf8'))
+}
 
-//     var playerName = "Player"
-//     const playerData = {
-//         name: playerName,
-//         score: score
-//     }
+function closeModal() {
+    var modal = document.getElementById("myModal")
 
-//     leaderboardData.push(playerData)
+    modal.style.display = "none"
+}
 
-//     fs.writeFileSync('leaderboardData.json', JSON.stringify(leaderboardData), 'utf8')
-// }
+
 
 document.addEventListener("keydown", (e) => {
     switch (e.key) {
@@ -140,6 +143,35 @@ function gameLoop() {
     clearCanvas();
     update();
     draw();
+}
+
+function savePlayerData() {
+    var playerName = document.getElementById("playerNameInput").value.trim();
+
+    if (playerName !== '') {
+        var playerData = {
+            playerName: playerName,
+            score: score
+        };
+
+        fetch('/saveScore', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(playerData)
+        })
+        .then(response => {
+            if (response.ok) {
+                console.log('Score saved successfully');
+            } else {
+                console.error('Failed to save score');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
 }
 
 function draw() {
