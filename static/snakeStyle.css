@@ -53,6 +53,14 @@ header a {
     text-decoration: none;
 }
 
+.high-score-container{
+    color: white;
+    font-family: "Georgia", serif;
+    font-size: 25px;
+    position: absolute;
+    left: 70%;
+}
+
 /* navbar  */
 
 .navbar {
