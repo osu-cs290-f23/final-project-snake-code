@@ -54,6 +54,14 @@ header a {
     text-decoration: none;
 }
 
+.high-score-container{
+    color: white;
+    font-family: "Georgia", serif;
+    font-size: 25px;
+    position: absolute;
+    left: 70%;
+}
+
 /* navbar  */
 
 .navbar {
@@ -145,10 +153,9 @@ header a {
 .leaderboard-canvas {
     /* border: 2px solid red; */
     width: 400px;
-    height: 600px;
+    height: 630px;
     margin: 10px;
     display: flex;
-    justify-content: top;
     align-items: center;
     flex-direction: column;
     background-color: white;
@@ -161,7 +168,7 @@ header a {
 
 .player-data-container {
     /* border: 2px solid green; */
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     border: solid 2px green;
     width: 90%;

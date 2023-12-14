@@ -3,8 +3,10 @@ var path = require('path')
 var express = require('express')
 var exphbs = require("express-handlebars")
 const fs = require('fs');
+
 var Handlebars = require('handlebars');
 var bodyParser = require('body-parser')
+
 
 var app = express()
 var port = process.env.PORT || 3000
@@ -60,7 +62,8 @@ app.get('/leaderboard', function (req, res){
     console.log(leaderboardData[0])
     const slicedleaderboardData = leaderboardData.slice(0,10)
     res.status(200).render("leaderboard",{
-        leaderboardData: slicedleaderboardData
+        leaderboardData: slicedleaderboardData,
+        game: false
     })
 })
 
@@ -68,7 +71,8 @@ app.get('/', function (req, res){
     writeData(outfile, dataArray)
     console.log(leaderboardData[0].score)
     res.status(200).render("gameView",{
-        highscore: leaderboardData[0].score
+        highscore: leaderboardData[0].score,
+        game: true
     })
     console.log("game page")
 })
