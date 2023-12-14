@@ -3,11 +3,10 @@ var path = require('path')
 var express = require('express')
 var exphbs = require("express-handlebars")
 const fs = require('fs');
-<<<<<<< HEAD
+
 var Handlebars = require('handlebars');
-=======
 var bodyParser = require('body-parser')
->>>>>>> f7456ac0fbca2e29d0287c2af1e448b4c319e695
+
 
 var app = express()
 var port = process.env.PORT || 3000
