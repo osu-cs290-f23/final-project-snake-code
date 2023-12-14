@@ -199,7 +199,11 @@ function draw() {
     snake.fillRect(head.x, head.y, head.size, head.size)
 
     snake.fillStyle = food.color
-    snake.fillRect(food.x, food.y, food.size, food.size)
+    //snake.fillRect(food.x, food.y, food.size, food.size)
+    snake.beginPath();
+    snake.arc(food.x+10, food.y+10, food.size/2, 0, 2 * Math.PI)
+    snake.closePath()
+    snake.fill()
 
     snake.fillStyle = "green"
     for (var segment of segments) {
