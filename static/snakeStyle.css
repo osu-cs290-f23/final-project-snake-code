@@ -33,7 +33,8 @@ header a {
 .header-image-container {
     /* max-height: 100px; */
     margin: 5px;
-    border: 2px solid greenyellow;
+    border: 2px solid lightgreen;
+    height: 100px;
 }
 
 .header-image-container img{
@@ -94,14 +95,26 @@ header a {
 /* game page  */
 
 .game-container {
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; */
+    /* border: 2px solid red; */
+    /* height: 100%; */
 }
 
 .game-content-container {
-    display: flex;
-    justify-content: center; 
+    /* display: flex;
+    justify-content: center; */
+    /* height: 100%;
+    width: 100%;
+    border: 2px solid pink;
+    width: 600px;
+    height: 600px;
+    margin: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0); */
+ 
 }
 
 #game-canvas {
